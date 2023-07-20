@@ -1,6 +1,16 @@
 import React from "react";
 import CardVideo from "./Componentes/CardVideo";
 import "./styles.css";
+import {
+  StyleHeader,
+  StyleMain,
+  StyleNav,
+  StylePainelVideos,
+  StyleContainer,
+}
+  from "./style";
+
+import { GlobalStyle } from "./GlobalStyle";
 
 export default function App() {
   const card1 = {
@@ -10,38 +20,38 @@ export default function App() {
   };
 
   return (
-    <div>
-      <div className="tela-inteira">
-        <header>
+    <GlobalStyle>
+      <StyleContainer>
+        <StyleHeader>
           <h1>LabeTube</h1>
           <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
+        </StyleHeader>
 
-        <main>
-          <nav className="menu-vertical">
+        <StyleMain>
+          <StyleNav>
             <ul>
-              <li className="botoes-meunu-vertical">Início</li>
-              <li className="botoes-meunu-vertical">Em alta</li>
-              <li className="botoes-meunu-vertical">Inscrições</li>
+              <li>Início</li>
+              <li>Em alta</li>
+              <li>Inscrições</li>
               <hr />
-              <li className="botoes-meunu-vertical">Originais</li>
-              <li className="botoes-meunu-vertical">Histórico</li>
+              <li>Originais</li>
+              <li>Histórico</li>
             </ul>
-          </nav>
+          </StyleNav>
 
-          <section className="painel-de-videos">
+          <StylePainelVideos>
             <CardVideo
               image1={card1.imagemDoVideo}
               titulo={card1.titulo}
               textoAlternativo={card1.textoAlternativo}
             />
-          </section>
-        </main>
+          </StylePainelVideos>
+        </StyleMain>
 
         <footer>
           <h4>Oi! Eu moro no footer!</h4>
         </footer>
-      </div>
-    </div>
+      </StyleContainer>
+    </GlobalStyle>
   );
 }
